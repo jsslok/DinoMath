@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -53,7 +52,7 @@ public class OrderGameActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("DinoMathScores", MODE_PRIVATE);
         generateQuestion();
 
-        // Set click listeners for number buttons
+
         for (int i = 0; i < numberButtons.length; i++) {
             final int index = i;
             numberButtons[i].setOnClickListener(v -> addToAnswer(index));
@@ -70,7 +69,6 @@ public class OrderGameActivity extends AppCompatActivity {
             return;
         }
 
-        // Generate 5 unique random numbers
         currentNumbers.clear();
         userOrder.clear();
         Random rand = new Random();
@@ -81,13 +79,13 @@ public class OrderGameActivity extends AppCompatActivity {
             }
         }
 
-        // Set numbers to buttons
+
         for (int i = 0; i < numberButtons.length; i++) {
             numberButtons[i].setText(String.valueOf(currentNumbers.get(i)));
             numberButtons[i].setVisibility(View.VISIBLE);
         }
 
-        // Clear answer boxes
+
         for (TextView box : answerBoxes) {
             box.setText("");
         }
@@ -135,7 +133,7 @@ public class OrderGameActivity extends AppCompatActivity {
             return;
         }
 
-        // Check if numbers are in ascending order
+
         boolean isCorrect = true;
         for (int i = 0; i < userOrder.size() - 1; i++) {
             if (userOrder.get(i) > userOrder.get(i + 1)) {
@@ -145,7 +143,7 @@ public class OrderGameActivity extends AppCompatActivity {
         }
 
         if (isCorrect) {
-            score += 10 + (combo * 2); // Combo bonus increases score
+            score += 10 + (combo * 2);
             combo++;
             feedback.setText("Correct! 🎉");
             feedback.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
@@ -157,7 +155,7 @@ public class OrderGameActivity extends AppCompatActivity {
 
         updateScore();
 
-        // Delay before next question
+
         new android.os.Handler().postDelayed(() -> generateQuestion(), 1500);
     }
 
@@ -167,18 +165,18 @@ public class OrderGameActivity extends AppCompatActivity {
     }
 
     private void endRound() {
-        // Save high score to shared preferences
+
         SharedPreferences.Editor editor = sharedPreferences.edit();
         int currentHighScore = sharedPreferences.getInt("orderHighScore", 0);
 
         if (score > currentHighScore) {
             editor.putInt("orderHighScore", score);
-            // Also save to a general high score if you want to show it on homepage
+
             editor.putInt("overallHighScore", score);
         }
         editor.apply();
 
-        // Ask to play again
+
         new android.app.AlertDialog.Builder(this)
                 .setTitle("Round Over!")
                 .setMessage("Your Score: " + score +
@@ -186,7 +184,7 @@ public class OrderGameActivity extends AppCompatActivity {
                         "\nPlay Again?")
                 .setPositiveButton("Yes", (dialog, which) -> restartGame())
                 .setNegativeButton("No", (dialog, which) -> {
-                    // Return the high score to homepage
+
                     Intent returnIntent = new Intent();
                     returnIntent.putExtra("highScore", sharedPreferences.getInt("orderHighScore", 0));
                     setResult(RESULT_OK, returnIntent);

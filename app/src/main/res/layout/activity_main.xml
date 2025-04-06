@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
@@ -9,17 +9,13 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-    <!-- Welcome Message Image at the top -->
+
     <ImageView
         android:id="@+id/welcomeMessage"
         android:layout_width="339dp"
         android:layout_height="137dp"
         android:layout_marginBottom="30dp"
         android:src="@drawable/dino_welcome_msg" />
-
-    <!-- Logo Image below welcome message -->
-
-    <!-- Compare Game Button -->
 
     <ImageView
         android:id="@+id/logoImage"
@@ -49,7 +45,6 @@
         android:textColor="#513865"
         android:textSize="16sp" />
 
-    <!-- Order Game Button -->
     <Button
         android:id="@+id/orderButton"
         android:layout_width="250dp"
@@ -71,7 +66,6 @@
         android:textColor="#513865"
         android:textSize="16sp" />
 
-    <!-- Compose Game Button -->
     <Button
         android:id="@+id/composeButton"
         android:layout_width="250dp"

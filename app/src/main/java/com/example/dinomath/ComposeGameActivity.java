@@ -29,7 +29,7 @@ public class ComposeGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.compose_game_activity);
 
-        // Initialize views
+
         scoreText = findViewById(R.id.scoreText);
         comboText = findViewById(R.id.comboText);
         targetNumber = findViewById(R.id.targetNumber);
@@ -39,21 +39,21 @@ public class ComposeGameActivity extends AppCompatActivity {
         undoBtn = findViewById(R.id.undoBtn);
         submitBtn = findViewById(R.id.submitBtn);
 
-        // Initialize number buttons
+
         numberButtons[0] = findViewById(R.id.btnOption1);
         numberButtons[1] = findViewById(R.id.btnOption2);
         numberButtons[2] = findViewById(R.id.btnOption3);
         numberButtons[3] = findViewById(R.id.btnOption4);
         numberButtons[4] = findViewById(R.id.btnOption5);
 
-        // Initialize answer boxes
+
         answerBoxes[0] = findViewById(R.id.answerBox1);
         answerBoxes[1] = findViewById(R.id.answerBox2);
 
         sharedPreferences = getSharedPreferences("DinoMathScores", MODE_PRIVATE);
         generateNewQuestion();
 
-        // Set click listeners for number buttons
+
         for (int i = 0; i < numberButtons.length; i++) {
             final int index = i;
             numberButtons[i].setOnClickListener(v -> selectNumber(index));
@@ -70,18 +70,18 @@ public class ComposeGameActivity extends AppCompatActivity {
             return;
         }
 
-        // Clear previous selections
+
         selectedNumbers.clear();
         answerBoxes[0].setText("");
         answerBoxes[1].setText("");
         feedback.setText("");
 
-        // Generate target number between 30 and 100
+
         Random rand = new Random();
         targetValue = 30 + rand.nextInt(71);
         targetNumber.setText("Target: " + targetValue);
 
-        // Generate 5 random numbers that can form pairs summing to target
+
         currentNumbers.clear();
         int firstNum = 10 + rand.nextInt(targetValue - 20);
         int secondNum = targetValue - firstNum;
@@ -89,7 +89,7 @@ public class ComposeGameActivity extends AppCompatActivity {
         currentNumbers.add(firstNum);
         currentNumbers.add(secondNum);
 
-        // Add 3 more random numbers (that don't form target with any other number)
+
         while (currentNumbers.size() < 5) {
             int num = 10 + rand.nextInt(91);
             boolean valid = true;
@@ -104,7 +104,7 @@ public class ComposeGameActivity extends AppCompatActivity {
             }
         }
 
-        // Shuffle the numbers
+
         Collections.shuffle(currentNumbers);
 
         // Assign numbers to buttons
@@ -133,7 +133,7 @@ public class ComposeGameActivity extends AppCompatActivity {
         int lastNum = selectedNumbers.remove(selectedNumbers.size() - 1);
         answerBoxes[selectedNumbers.size()].setText("");
 
-        // Find and re-enable the corresponding button
+
         for (Button btn : numberButtons) {
             if (btn.getText().toString().equals(String.valueOf(lastNum)) ){
                 btn.setEnabled(true);

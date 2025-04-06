@@ -69,10 +69,10 @@ public class CompareGameActivity extends AppCompatActivity {
         questionCount++;
         updateScore();
 
-        // Delay next question to show feedback
+
         handler.postDelayed(() -> {
             generateQuestion();
-        }, 1500); // 1.5 second delay
+        }, 1500);
     }
 
     private void updateScore() {

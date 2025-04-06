@@ -22,7 +22,7 @@
         android:textColor="@android:color/white"
         android:textSize="16sp" />
 
-    <!-- Score Display -->
+
     <TextView
         android:id="@+id/scoreText"
         android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <!-- Combo Display -->
+
     <TextView
         android:id="@+id/comboText"
         android:layout_width="wrap_content"
@@ -47,9 +47,6 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <!-- Target Number Display -->
-
-    <!-- Instruction -->
     <TextView
         android:id="@+id/targetNumber"
         android:layout_width="wrap_content"
@@ -75,7 +72,6 @@
         android:textColor="#000000"
         android:textSize="20sp" />
 
-    <!-- Available Numbers (Grid Layout) -->
     <GridLayout
         android:id="@+id/numberGrid"
         android:layout_width="305dp"
