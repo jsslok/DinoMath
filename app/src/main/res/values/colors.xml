@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#64B5F6</color>
+    <color name="colorBackground">#FFF8E1</color>
+    <color name="pastel_green">#A8E6CF</color>
+    <color name="purple">#513865</color>
+    <color name="text_dark">#212121</color>
+    <color name="dino_egg_cream">#F3E5AB</color>
+    <color name="coral_orange">#FF6F61</color>
+    <color name="dino_leaf_green">#7CB518</color>
+    <color name="vibrant_sunrise_orange">#FF7043</color>
+    <color name="bright_azure_blue">#29B6F6</color>
+    <color name="fresh_lime_green">#8BC34A</color>
+
+</resources>

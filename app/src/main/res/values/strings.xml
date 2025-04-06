@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">DinoMath</string>
+
+    <!-- Content Descriptions -->
+    <string name="welcome_msg_desc">Dino welcome message</string>
+    <string name="dino_logo_desc">Dino logo</string>
+    <string name="dino_background_desc">Dino themed background</string>
+
+    <!-- Home Screen Buttons -->
+    <string name="compare_numbers">Compare Numbers</string>
+    <string name="order_numbers">Order Numbers</string>
+    <string name="compose_numbers">Compose Numbers</string>
+
+    <!-- High Score Labels (if needed for default text) -->
+    <string name="compare_high_score">High Score: 0</string>
+    <string name="order_high_score">High Score: 0</string>
+    <string name="compose_high_score">High Score: 0</string>
+
+    <!-- Game Over Message with placeholder for final score -->
+    <string name="game_over">Game Over! Final Score: %1$d</string>
+
+    <!-- Answer Feedback -->
+    <string name="correct_answer">Correct!</string>
+    <string name="incorrect_answer">Incorrect!</string>
+
+    <!-- Additional strings as needed -->
+</resources>

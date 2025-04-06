@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dino_background2"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/exitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:padding="10dp"
+        android:text="← Back"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <!-- Score Display -->
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Score: 0"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Combo Display -->
+    <TextView
+        android:id="@+id/comboText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scoreText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Combo: 0"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Target Number Display -->
+
+    <!-- Instruction -->
+    <TextView
+        android:id="@+id/targetNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comboText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Target: 50"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/targetNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Select two numbers that add up to the target"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <!-- Available Numbers (Grid Layout) -->
+    <GridLayout
+        android:id="@+id/numberGrid"
+        android:layout_width="305dp"
+        android:layout_height="177dp"
+        android:layout_below="@id/instructionText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:useDefaultMargins="true">
+
+        <Button
+            android:id="@+id/btnOption1"
+            style="@style/NumberBlock"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:text="10" />
+
+        <Button
+            android:id="@+id/btnOption2"
+            style="@style/NumberBlock"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:text="20" />
+
+        <Button
+            android:id="@+id/btnOption3"
+            style="@style/NumberBlock"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:text="30" />
+
+        <Button
+            android:id="@+id/btnOption4"
+            style="@style/NumberBlock"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:text="40" />
+
+        <Button
+            android:id="@+id/btnOption5"
+            style="@style/NumberBlock"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:text="50" />
+
+
+    </GridLayout>
+
+
+    <Button
+        android:id="@+id/undoBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/answerContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/dino_leaf_green"
+        android:text="Undo"
+        android:textSize="18sp"
+        app:icon="@android:drawable/ic_input_delete"
+        app:iconTint="#FAFAFA" />
+
+
+    <LinearLayout
+        android:id="@+id/answerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberGrid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/answerBox1"
+            style="@style/AnswerBox"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/answerBox2"
+            style="@style/AnswerBox"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/undoBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/coral_orange"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="235dp"
+        android:layout_height="67dp"
+        android:layout_below="@id/submitBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
